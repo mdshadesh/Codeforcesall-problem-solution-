@@ -1,29 +1,28 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <ctype.h>
-#include <string.h>
+#include <iostream>
+#include<string>
 
-int main()
+using namespace std;
+
+int main() 
 {
-    int n,i,count=0;
-    char ch[500],ch1;
-    scanf("%d %s",&n,&ch);
-    //printf("%d\n%s",n,ch);
-    ch1 = ch[0];
-    for(i=1;i<n;i++)
+ int n;
+ cin>>n;
+ string s;
+ cin>>s;
+ int r=0;
+ int g=0;
+ int b=0;
+ for(int i=1;i<n;i++)
+ {
+ 	if(s[i-1]==s[i])
+ 	if(s[i]=='R')++r;
+ 	else if(s[i]=='G')
     {
-        if (ch[i] == ch1)
-        {
-            ch1 = ch[i];
-            count++;
-        }
-        else
-        {
-            ch1 = ch[i];
-        }
-    }
-    printf("%d",count);
-
-
-    return 0;
+ 		++g;
+ 	}
+ 	else if(s[i]=='B')
+ 	++b;
+ }
+ cout<<r+g+b;
+  	return 0;
 }
